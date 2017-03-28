@@ -31,10 +31,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
-end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
@@ -42,3 +38,8 @@ gem 'activeadmin', '1.0.0.pre4'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'devise'
 gem 'cancan'
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end

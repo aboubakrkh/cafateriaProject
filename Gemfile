@@ -12,7 +12,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'jquery-ui-rails', '~> 4.2.1'
-gem 'active_skin'
+
 # gem 'jquery-rails'
 # gem 'jquery-rails', "2.3.0"
 

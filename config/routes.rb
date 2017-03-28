@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   # get 'home/index'
 
   devise_for :users, :controllers => {:registrations => "registrations"}
@@ -23,5 +24,13 @@ Rails.application.routes.draw do
 # resources :products
 # end
 # end
+=======
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  # resources :odrder_products
+  # resources :categories
+  # resources :products
+  # resources :orders
+  # resources :users
+>>>>>>> 881a89e7240a3df6a02cf6a1720f2d5c3699cb98
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

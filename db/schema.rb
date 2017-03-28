@@ -55,15 +55,6 @@ ActiveRecord::Schema.define(version: 20170328114048) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "order_products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "order_id"
-    t.integer  "product_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["order_id"], name: "index_order_products_on_order_id", using: :btree
-    t.index ["product_id"], name: "index_order_products_on_product_id", using: :btree
-  end
-
   create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "status"
     t.datetime "orderdate"
@@ -121,12 +112,5 @@ ActiveRecord::Schema.define(version: 20170328114048) do
   end
 
   add_foreign_key "categories", "products"
-<<<<<<< HEAD
-=======
-  add_foreign_key "odrder_products", "orders"
-  add_foreign_key "odrder_products", "products"
-  add_foreign_key "order_products", "orders"
-  add_foreign_key "order_products", "products"
->>>>>>> 881a89e7240a3df6a02cf6a1720f2d5c3699cb98
   add_foreign_key "orders", "users"
 end

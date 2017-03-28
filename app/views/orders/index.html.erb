@@ -1,0 +1,105 @@
+<!-- <p id="notice"><%= notice %></p>
+
+<h1>Orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th>Orderdate</th>
+      <th>Notes</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.status %></td>
+        <td><%= order.orderdate %></td>
+        <td><%= order.notes %></td>
+        <td><%= order.user %></td>
+        <td><%= link_to 'Show', order %></td>
+        <td><%= link_to 'Edit', edit_order_path(order) %></td>
+        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Order', new_order_path %> -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8">
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Home</title>
+  <!-- ============ Google fonts ============ -->
+  <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet'
+  type='text/css' />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300,800'
+  rel='stylesheet' type='text/css' />
+  <!-- ============ Add custom CSS here ============ -->
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="../assets/css/style.css" rel="stylesheet" type="text/css" />
+  <link href="../assets/css/font-awesome.css" rel="stylesheet" type="text/css" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="color">
+    <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
+      <div class="container">
+        <div class="navbar-header"><a class="navbar-brand" href="#">Home Cafe</a>
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-menubuilder">
+          <ul class="nav navbar-nav navbar-right menu">
+            <!-- <li><a href="">Home</a></li> -->
+            <li><%= link_to "Home", new_order_path %></li>
+            <li><%= link_to "My Orders", orders_url %></li>
+
+        </ul>
+        </div>
+      </div>
+    </div>
+
+<div class="container">
+  <h2 class="myorder">My Orders</h2>
+  <div class="col-xs-12 date">
+    <span>From: </span>
+    <input type="date" name="" class="date_from" value="">
+    <span>To: </span>
+    <input type="date" name="" class="date_to" value="">
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Order date</th>
+        <th>Status</th>
+        <th>Amount</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <td><%= order.orderdate %></td>
+          <td><%= order.status %></td>
+          <td><%= order.notes %></td>
+          <td><%= order.user %></td>
+          <td><%= link_to 'Show', order %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

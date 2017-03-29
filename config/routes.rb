@@ -9,11 +9,9 @@ Rails.application.routes.draw do
   # get 'sessions/new'
   # get 'users' => "orders#new"
   # resources :sessions
-  # get 'users' => "home#index"
   resources :users
-  resources :orders
-  # get 'orders' => "home#index"
   resources :products
+  resources :orders
   # resources :logins
 
   root :to => "home#index"

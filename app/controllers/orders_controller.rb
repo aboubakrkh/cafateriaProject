@@ -4,17 +4,19 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    @orders = Order.where(user_id: current_user)
   end
 
   # GET /orders/1
   # GET /orders/1.json
   def show
+        @orders = Order.where(user_id: current_user)
   end
 
   # GET /orders/new
   def new
-    @order = Order.new
+    # @user = User.find(params[:user_id])
+    @order = current_user.orders.build
   end
 
   # GET /orders/1/edit
@@ -24,17 +26,16 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-    @order = Order.new(order_params)
+    # @user = User.find(params[:user_id])
+    @order = current_user.orders.build(order_params)
 
-    respond_to do |format|
+    # respond_to do |format|
       if @order.save
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
-        format.json { render :show, status: :created, location: @order }
+       redirect_to @order
+
       else
-        format.html { render :new }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
+        render 'new'
       end
-    end
   end
 
   # PATCH/PUT /orders/1

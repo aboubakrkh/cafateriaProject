@@ -20421,3 +20421,50 @@ Processing by OrdersController#index as HTML
 Completed 200 OK in 97ms (Views: 94.0ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/" for ::1 at 2017-03-29 10:11:31 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (28.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by HomeController#index as HTML
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 33ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-03-29 10:11:31 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (87.0ms)
+Completed 200 OK in 5300ms (Views: 5197.0ms | ActiveRecord: 48.8ms)
+
+
+Started GET "/admin" for ::1 at 2017-03-29 10:11:48 +0200
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/login" for ::1 at 2017-03-29 10:11:48 +0200
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering /usr/local/rvm/gems/ruby-2.4.0/gems/activeadmin-1.0.0.pre4/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /usr/local/rvm/gems/ruby-2.4.0/gems/activeadmin-1.0.0.pre4/app/views/active_admin/devise/shared/_links.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.4.0/gems/activeadmin-1.0.0.pre4/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (134.6ms)
+Completed 200 OK in 944ms (Views: 884.3ms | ActiveRecord: 48.5ms)
+
+
+Started POST "/admin/login" for ::1 at 2017-03-29 10:11:53 +0200
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LnldlmJJYdvxtlhgkhtqxKkfqCrPO/iSjfCHUAA4LhQlXu5L2rTWirTgNAHKTeDiGfxi9wWDyJB1yaW9+/REzA==", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  `admin_users`.* FROM `admin_users` WHERE `admin_users`.`email` = 'admin@example.com' ORDER BY `admin_users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (23.5ms)[0m  [1m[33mUPDATE `admin_users` SET `current_sign_in_at` = '2017-03-29 08:11:53', `sign_in_count` = 2, `updated_at` = '2017-03-29 08:11:53' WHERE `admin_users`.`id` = 1[0m
+  [1m[35m (19.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 322ms (ActiveRecord: 43.1ms)
+
+
+Started GET "/admin" for ::1 at 2017-03-29 10:11:53 +0200
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.8ms)[0m  [1m[34mSELECT  `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 ORDER BY `admin_users`.`id` ASC LIMIT 1[0m
+  Rendering /usr/local/rvm/gems/ruby-2.4.0/gems/activeadmin-1.0.0.pre4/app/views/active_admin/page/index.html.arb
+  Rendered /usr/local/rvm/gems/ruby-2.4.0/gems/activeadmin-1.0.0.pre4/app/views/active_admin/page/index.html.arb (82.9ms)
+Completed 200 OK in 120ms (Views: 99.7ms | ActiveRecord: 0.8ms)
+
+

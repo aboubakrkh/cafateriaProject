@@ -1,0 +1,283 @@
+<!-- <h1>New Order</h1>
+
+<%= render 'form', order: @order %>
+
+<%= link_to 'Back', orders_path %> -->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8">
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Home</title>
+  <!-- ============ Google fonts ============ -->
+  <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet'
+  type='text/css' />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300,800'
+  rel='stylesheet' type='text/css' />
+  <!-- ============ Add custom CSS here ============ -->
+  <!-- <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> -->
+  <!-- <link href="../assets/css/style.css" rel="stylesheet" type="text/css" /> -->
+  <!-- <link href="../assets/css/font-awesome.css" rel="stylesheet" type="text/css" /> -->
+  <%= stylesheet_link_tag("/assets/css/bootstrap.min.css") %>
+  <%= stylesheet_link_tag("/assets/css/font-awesome.css") %>
+  <%= stylesheet_link_tag("/assets/css/style.css") %>
+
+  <!-- <%= stylesheet_link_tag("/assets/js/bootstrap.min.css") %>
+  <%= stylesheet_link_tag("/assets/js/font-awesome.css") %>
+  <%= stylesheet_link_tag("/assets/js/style.css") %> -->
+</head>
+<body>
+  <div class="color">
+    <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
+      <div class="container">
+        <div class="navbar-header"><a class="navbar-brand" href="#">Home Cafe</a>
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-menubuilder">
+          <ul class="nav navbar-nav navbar-right menu">
+            <li><a href="home.html">Home</a></li>
+            <!-- <li><a href="myorders.html">My Orders</a></li> -->
+            <li><%= link_to "My Orders", orders_url %></li>
+
+            <li><span>Aboubakr Khedr</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col-xs-12">
+        <div class="col-md-4 order">
+          <h5>Order Items</h5>
+          <ul>
+            <li id="1">
+              <span class="product">Tea</span>
+              <input type="text" name="num_q" value="1" class="num_q form-control input-form">
+              <span class="plus-span">
+                <i class="fa fa-plus plus" aria-hidden="true"></i>
+                <i class="fa fa-minus" aria-hidden="true"></i>
+              </span>
+              <input type="hidden" class="basic_price" name="basic_price" value="25">
+              <span class="price">25 LE.</span>
+              <span class="delete"><i class="fa fa-times" aria-hidden="true"></i></span>
+            </li>
+            <li id="2">
+              <span class="product">Coffee</span>
+              <input type="text" name="num_q" value="1" class="num_q form-control input-form">
+              <span class="plus-span">
+                <i class="fa fa-plus plus" aria-hidden="true"></i>
+                <i class="fa fa-minus" aria-hidden="true"></i>
+              </span>
+              <input type="hidden" class="basic_price" name="basic_price" value="40">
+              <span class="price">40 LE.</span>
+              <span class="delete"><i class="fa fa-times" aria-hidden="true"></i></span>
+            </li>
+          </ul>
+          <div class="col-xs-12 note">
+            <h4>Notes</h4>
+            <textarea name="name" class="form-control input-form" rows="3" cols="37"></textarea>
+          </div>
+          <div class="col-xs-12 room">
+            <h4>Room No.</h4>
+            <select class="room_no form-control  input-form" name="">
+              <option value="">2005</option>
+              <option value="">2006</option>
+              <option value="">2007</option>
+            </select>
+          </div>
+          <div class="total">
+            <span>55 LE.</span>
+          </div>
+          <div class="col-xs-12">
+            <input type="submit" name="" class="btn btn-primary confirm" value="Confirm">
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="col-xs-12">
+            <div class="col-xs-6"></div>
+            <div class="col-md-6">
+                <form action="" class="search-form">
+                    <div class="form-group has-feedback">
+                    <label for="search" class="sr-only">Search</label>
+                    <input type="text" class="form-control" name="search" id="search" >
+                      <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                  </div>
+                </form>
+            </div>
+          </div>
+          <div class="col-xs-12 last_order">
+            <div class="col-xs-12">
+              <h3>Lastest Order</h3>
+            </div>
+            <div class="col-xs-3">
+              <a href="detail_page.html" class="strip_list">
+                <div class="desc">
+                  <div class="thumb_strip">
+                    <img src="http://www.ansonika.com/quickfood/img/thumb_restaurant.jpg" alt="">
+                  </div>
+                  <h5>Green Tea</h5>
+                </div><!-- End desc-->
+              </a><!-- End strip_list-->
+            </div>
+            <div class="col-xs-3">
+              <a href="detail_page.html" class="strip_list">
+                <div class="desc">
+                  <div class="thumb_strip">
+                    <img src="http://www.ansonika.com/quickfood/img/thumb_restaurant.jpg" alt="">
+                  </div>
+                  <h5>Green Tea</h5>
+                </div><!-- End desc-->
+              </a><!-- End strip_list-->
+            </div>
+            <div class="col-xs-3">
+              <a href="detail_page.html" class="strip_list">
+                <div class="desc">
+                  <div class="thumb_strip">
+                    <img src="http://www.ansonika.com/quickfood/img/thumb_restaurant.jpg" alt="">
+                  </div>
+                  <h5>Green Tea</h5>
+                </div><!-- End desc-->
+              </a><!-- End strip_list-->
+            </div>
+            <div class="col-xs-3">
+              <a href="detail_page.html" class="strip_list">
+                <div class="desc">
+                  <div class="thumb_strip">
+                    <img src="http://www.ansonika.com/quickfood/img/thumb_restaurant.jpg" alt="">
+                  </div>
+                  <h5>Green Tea</h5>
+                </div><!-- End desc-->
+              </a><!-- End strip_list-->
+            </div>
+          </div>
+          <div class="col-xs-12 av_item">
+                <h4>Available Items</h4>
+            <div class="col-xs-3">
+              <a class="strip_list">
+                <div class="price_av"><span>60 LE</span></div>
+                <div class="desc">
+                  <div class="thumb_strip">
+                    <img src="http://www.ansonika.com/quickfood/img/thumb_restaurant_6.jpg" alt="">
+                  </div>
+                  <h5>Green Tea</h5>
+                  <span class="add_to_order" id="1">Add+</span>
+                </div><!-- End desc-->
+              </a><!-- End strip_list-->
+            </div>
+            <div class="col-xs-3">
+              <a class="strip_list">
+                <div class="price_av"><span>90 LE</span></div>
+                <div class="desc">
+                  <div class="thumb_strip">
+                    <img src="http://www.ansonika.com/quickfood/img/thumb_restaurant_6.jpg" alt="">
+                  </div>
+                  <h5>Green Tea</h5>
+                  <span class="add_to_order" id="2">Add+</span>
+                </div><!-- End desc-->
+              </a><!-- End strip_list-->
+            </div>
+            <div class="col-xs-3">
+              <a class="strip_list">
+                <div class="price_av"><span>20 LE</span></div>
+                <div class="desc">
+                  <div class="thumb_strip">
+                    <img src="http://www.ansonika.com/quickfood/img/thumb_restaurant_6.jpg" alt="">
+                  </div>
+                  <h5>Black Tea</h5>
+                  <span class="add_to_order" id="3">Add+</span>
+                </div><!-- End desc-->
+              </a><!-- End strip_list-->
+            </div>
+            <div class="col-xs-3">
+              <a class="strip_list">
+                <div class="price_av"><span>40 LE</span></div>
+                <div class="desc">
+                  <div class="thumb_strip">
+                    <img src="http://www.ansonika.com/quickfood/img/thumb_restaurant_6.jpg" alt="">
+                  </div>
+                  <h5>Nescafe</h5>
+                  <span class="add_to_order" id="4">Add+</span>
+                </div><!-- End desc-->
+              </a><!-- End strip_list-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).on("click", ".plus", function(event){
+  var input = $(this).closest('span').prev('input')[0];
+  var price_order = $(this).closest('span').next('input')[0].value;
+  var elem = input.value
+  var val = ++elem;
+  var price_fin = price_order*val
+  $(this).closest('span').prev('input')[0].value = val;
+  $(this).closest('span').nextAll(".price")[0].textContent = price_fin+" LE.";
+});
+
+$(document).on("click", ".fa-minus", function(event){
+  var input = $(this).closest('span').prev('input')[0];
+  var price_order = $(this).closest('span').next('input')[0].value;
+  var elem = input.value
+  if(elem > 1){
+    var val = --elem;
+    var price_fin = price_order*val
+    $(this).closest('span').prev('input')[0].value = val;
+    $(this).closest('span').nextAll(".price")[0].textContent = price_fin+" LE.";
+  }
+});
+
+$(document).on("click", ".add_to_order", function(event){
+  var input = $(this).prev('h5')[0].textContent;
+  var price = $(this).closest("div").prev('.price_av')[0].textContent;
+  var id_pro = $(this).attr('id');
+  var li = '<li id="'+id_pro+'"><span class="product">'+input+'</span>\
+          <input type="text" name="num_q" value="1" class="num_q form-control input-form">\
+            <span class="plus-span">\
+              <i class="fa fa-plus plus" aria-hidden="true"></i>\
+              <i class="fa fa-minus" aria-hidden="true"></i>\
+            </span>\
+            <input type="hidden" class="basic_price" name="basic_price" value="'+price+'">\
+            <span class="price">'+price+'</span>\
+            <span class="delete"><i class="fa fa-times" aria-hidden="true"></i></span>\
+          </li>';
+  var flag = false;
+$(function(){
+  $(".order ul li").each(function(){
+      var id = $(this).find('div.page#'+id_pro+'');
+      if(id.context.id == id_pro){
+
+        flag = true;
+      }
+  });
+});
+  if(!flag){
+    $(".order ul").append(li);
+  }
+});
+
+$(document).on("click", ".delete", function(event){
+  $(this).context.parentElement.remove();
+});
+
+$("#search").on("keyup", function() {
+  var g = $(this).val();
+  $(".desc h5").each( function() {
+    var s = $(this).text();
+    console.log(s.indexOf(g));
+    if (s.toLowerCase().search(g) >= 0) {
+      $(this).parent().parent().show();
+    }
+    else {
+      $(this).parent().parent().hide();
+    }
+  });
+});
+</script>

@@ -6,7 +6,6 @@ git_source(:github) do |repo_name|
 end
 
 gem 'rails', '~> 5.0.2'
-gem 'mysql2', '>= 0.3.18', '< 0.5'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -38,3 +37,12 @@ gem 'devise'
 gem 'cancan'
 # gem 'active_skin'
 #gem 'bourbon', '3.0.1'
+group :development do
+gem 'mysql2', '>= 0.3.18', '< 0.5'
+end
+
+
+group :production do
+gem 'pg'
+gem 'rails_12factor'
+end

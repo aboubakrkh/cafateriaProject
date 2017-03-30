@@ -46,7 +46,7 @@
           <%= form_for @order , html: {id: :form_id,remote: :true } do |f| %>
           <h5>Order Items</h5>
           <%= f.hidden_field :orderdate %>
-          <ul>
+          <ul class="ul_order">
 
           </ul>
           <div class="col-xs-12 note">
@@ -141,7 +141,7 @@
                           <img src="http://www.ansonika.com/quickfood/img/thumb_restaurant_6.jpg" alt="">
                         </div>
                         <h5><%= product.name %></h5>
-                        <span class="add_to_order" id="<%= product.id %>">Add+</span>
+                        <span style="cursor: pointer;" class="add_to_order" id="<%= product.id %>">Add+</span>
                       </div><!-- End desc -->
                   </a><!-- End strip_list -->
                 </div>
@@ -251,7 +251,7 @@ $('form').submit(function() {
             data: {'product_name':product_name,'quantity':quantity,'price':price,'order_id':order_id },
             dataType: "JSON"
         }).success(function(json){
-            console.log("success", json);
+            $(".ul_order").html("<p>Order Send </p></br> <p>processing</p>");
         });
       }
     });
